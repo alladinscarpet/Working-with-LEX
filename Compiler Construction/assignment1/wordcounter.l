@@ -5,7 +5,7 @@ int total_size = 0;
 %}
 
 %%
-[a-zA-Z]+    { word_count++; total_size += yyleng; }  // Matches words
+[0-9a-zA-Z]+    { word_count++; total_size += yyleng; }  // Matches words
 .            ;  // Ignore other characters
 \n           ;  // Ignore newlines
 %%
