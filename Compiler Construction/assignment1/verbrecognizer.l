@@ -4,9 +4,11 @@
 
 %%
 
-is|am|are|were|was|be|being|been|do|does|did|will|would|should|can|could|has|have|had|go  { printf("Verb: %s\n", yytext); }
+(^|[[:space:]])(is|am|are|were|was|be|being|been|do|does|did|will|would|should|can|could|has|have|had|go)([[:space:]]|$) {
+    printf("Verb: %s\n", yytext);
+}
 
-.|\n   { /* ignore any other character or newline */ }
+.|\n { /* ignore other characters and newlines */ }
 
 %%
 
